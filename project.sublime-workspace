@@ -1,0 +1,173 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/einherjer-uy/Dropbox/more",
+		"/Users/einherjer-uy/dev/ansible/hacking/env-setup",
+		"/Users/einherjer-uy/dev/src/poptropica/.gitignore",
+		"/Users/einherjer-uy/dev/springsource-liferay/liferay-portal-6.2-ce-ga2/portal-ext.properties",
+		"/Users/einherjer-uy/dev/src/poptropica/app/index.html",
+		"/Users/einherjer-uy/Downloads/DMG/dailymail/backend/src/main/resources/application.properties",
+		"/Users/einherjer-uy/dev/src/poptropica-mobile/Gruntfile.js",
+		"/Users/einherjer-uy/dev/src/poptropica/.bowerrc",
+		"/Users/einherjer-uy/dev/src/poptropica/app/scripts/config.js",
+		"/Users/einherjer-uy/dev/src/poptropica/app/scripts/services/class.js",
+		"/Users/einherjer-uy/dev/src/poptropica/app/scripts/services/levels.js",
+		"/Users/einherjer-uy/dev/src/poptropica/app/scripts/services/units.js",
+		"/Users/einherjer-uy/dev/src/poptropica/app/scripts/services/teacher.js",
+		"/Users/einherjer-uy/dev/untitled",
+		"/Volumes/SEAGATE/backup globant/EducaIG/configuration/portal-ext.properties",
+		"/Users/einherjer-uy/dev/apache-maven-3.2.1/conf/settings.xml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/einherjer-uy/dev/src/poptropica/app/scripts",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"insert",
+			"c3p0",
+			"vhost",
+			"\">\n",
+			"cookie",
+			"localhost",
+			"35729",
+			"https://itunes.apple.com/gb/app/our-discovery-island-phonic/id673987542?mt=8",
+			"10.120.10.81",
+			"ws://",
+			"ws:",
+			"10.120.10.81",
+			"api/v1",
+			"/poptropica",
+			"/idm",
+			"localh",
+			"10.120",
+			"10.120.10.81",
+			"lessons",
+			"TeacherService.Lessons",
+			"Levels",
+			"lessons.json"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"localhost"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 274.0,
+	"status_bar_visible": true
+}

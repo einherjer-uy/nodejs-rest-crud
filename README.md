@@ -1,4 +1,4 @@
-requires mongodb at localhost:27017 with a collection named "lrs"
+requires mongodb at localhost:27017 with a database named "lrs"
 
 npm install
 

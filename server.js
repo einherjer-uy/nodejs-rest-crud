@@ -10,10 +10,10 @@ var bodyParser = require('body-parser');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-var port = process.env.PORT || 3030; 		// set our port
+app.set('port', process.env.PORT || 3030); 		// set our port
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/lrs'); // connect to our database
@@ -24,7 +24,7 @@ mongoose.connect('mongodb://localhost:27017/lrs'); // connect to our database
 
 var routes = require('./app/routes/scratchcodes');
 // all of our routes will be prefixed with /api
-app.use('/api', routes);
+app.use('/api/v1', routes);
 
 
 /*
@@ -40,7 +40,7 @@ app.use(function(err, req, res, next){
 
 // START THE SERVER
 // =============================================================================
-var server = app.listen(port, function () {
+var server = app.listen(app.get('port'), function () {
   var host = server.address().address
   var port = server.address().port
   console.log('Magic happens at http://%s:%s', host, port)

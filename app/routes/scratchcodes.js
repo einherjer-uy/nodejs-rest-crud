@@ -23,9 +23,9 @@ router.route('/scratchcodes')
 		scratchcode.code = req.body.code;
 
 		scratchcode.save(function(err) {
-			if (err)
-				res.send(err);
-
+			if (err) {
+				return res.send(err);
+			}
 			res.json({ message: 'Scratchcode created!' });
 		});
 		
@@ -33,9 +33,9 @@ router.route('/scratchcodes')
 
 	.get(function(req, res) {
 		Scratchcode.find(function(err, scratchcodes) {
-			if (err)
-				res.send(err);
-
+			if (err) {
+				return res.send(err);
+			}
 			res.json(scratchcodes);
 		});
 	});
@@ -44,8 +44,13 @@ router.route('/scratchcodes/:scratchcode_code')
 
 	.get(function(req, res) {
 		Scratchcode.findByCode(req.params.scratchcode_code, function(err, scratchcode) {
-			if (err)
-				res.send(err);
+			if (err) {
+				return res.send(err);
+			}
+			if (scratchcode == null) {
+				res.statusCode = 400;
+				return res.json({ error : "Code doesn't exist"});
+			}
 
 			res.json(scratchcode);
 		});
@@ -53,15 +58,20 @@ router.route('/scratchcodes/:scratchcode_code')
 
 	.put(function(req, res) {
 		Scratchcode.findByCode(req.params.scratchcode_code, function(err, scratchcode) {
-			if (err)
-				res.send(err);
-			
+			if (err) {
+				return res.send(err);
+			}
+			if (scratchcode == null) {
+				res.statusCode = 400;
+				return res.json({ error : "Code doesn't exist"});
+			}
+
 			scratchcode.code = req.body.code;
 			
 			scratchcode.save(function(err) {
-				if (err)
-					res.send(err);
-			
+				if (err) {
+					return res.send(err);
+				}
 				res.json({ message: 'Scratchcode updated!' });
 			});
 
@@ -72,10 +82,62 @@ router.route('/scratchcodes/:scratchcode_code')
 		Scratchcode.remove({
 			code: req.params.scratchcode_code
 		}, function(err, scratchcode) {
-			if (err)
-				res.send(err);
-
+			if (err) {
+				return res.send(err);
+			}
 			res.json({ message: 'Successfully deleted' });
+		});
+	});
+
+router.route('/scratchcodes/:scratchcode_code/consume')
+	.post(function(req, res) {
+		Scratchcode.findByCode(req.params.scratchcode_code, function(err, scratchcode) {
+			if (err) {
+				return res.send(err);
+			}
+			if (scratchcode == null) {
+				res.statusCode = 400;
+				return res.json({ error : "Code doesn't exist"});
+			}
+			if (!scratchcode.available) {
+				res.statusCode = 400;
+				return res.json({ error : 'the code is already used' });
+			}
+
+			scratchcode.consume();
+
+			scratchcode.save(function(err) {
+				if (err) {
+					return res.send(err);
+				}
+				res.json({ message: 'Scratchcode updated!' });
+			});
+		});
+	});
+
+router.route('/scratchcodes/:scratchcode_code/reset')
+	.post(function(req, res) {
+		Scratchcode.findByCode(req.params.scratchcode_code, function(err, scratchcode) {
+			if (err) {
+				return res.send(err);
+			}
+			if (scratchcode == null) {
+				res.statusCode = 400;
+				return res.json({ error : "Code doesn't exist"});
+			}
+			if (scratchcode.available) {
+				res.statusCode = 400;
+				return res.json({ error : 'the code is not used yet' });
+			}
+
+			scratchcode.reset();
+
+			scratchcode.save(function(err) {
+				if (err) {
+					return res.send(err);
+				}
+				res.json({ message: 'Scratchcode updated!' });
+			});
 		});
 	});
 
